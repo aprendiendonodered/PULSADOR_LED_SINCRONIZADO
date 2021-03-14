@@ -2,7 +2,10 @@
     "name": "PULSADOR_LED_SINCRONIZADO",
     "description": "A Node-RED Project",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red-contrib-ui-led": "0.4.9",
+        "node-red-dashboard": "2.23.4"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flow.json",

@@ -1,1 +1,263 @@
-[]
+[
+    {
+        "id": "8f93322c.36dee",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "8afab589.d4bab8",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "enriquecrespo.com",
+        "port": "8883",
+        "tls": "",
+        "clientid": "",
+        "usetls": true,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "ef9f00b.4398f",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "2e3792f6.fd326e",
+        "type": "ui_group",
+        "name": "Pulsador y led",
+        "tab": "ef9f00b.4398f",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "467162fb.6799fc",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "1ce373e5.aa07ac",
+        "type": "ui_switch",
+        "z": "8f93322c.36dee",
+        "name": "",
+        "label": "switch",
+        "tooltip": "",
+        "group": "2e3792f6.fd326e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 450,
+        "y": 140,
+        "wires": [
+            [
+                "542edcc6.dbda34"
+            ]
+        ]
+    },
+    {
+        "id": "32c08dbd.4cf762",
+        "type": "ui_led",
+        "z": "8f93322c.36dee",
+        "order": 2,
+        "group": "2e3792f6.fd326e",
+        "width": 0,
+        "height": 0,
+        "label": "Led",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "true",
+                "valueType": "str"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 590,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "e98c040c.02e4a8",
+        "type": "mqtt in",
+        "z": "8f93322c.36dee",
+        "name": "",
+        "topic": "cursocefire/wemos/enrique/led",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "8afab589.d4bab8",
+        "x": 240,
+        "y": 260,
+        "wires": [
+            [
+                "32c08dbd.4cf762"
+            ]
+        ]
+    },
+    {
+        "id": "542edcc6.dbda34",
+        "type": "mqtt out",
+        "z": "8f93322c.36dee",
+        "name": "",
+        "topic": "cursocefire/wemos/enrique/pulsador",
+        "qos": "",
+        "retain": "",
+        "broker": "8afab589.d4bab8",
+        "x": 690,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "2f6aa326.60dfac",
+        "type": "mqtt in",
+        "z": "8f93322c.36dee",
+        "name": "",
+        "topic": "cursocefire/wemos/enrique/pulsador",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "8afab589.d4bab8",
+        "x": 200,
+        "y": 140,
+        "wires": [
+            [
+                "1ce373e5.aa07ac",
+                "99b992dd.23cb1"
+            ]
+        ]
+    },
+    {
+        "id": "99b992dd.23cb1",
+        "type": "mqtt out",
+        "z": "8f93322c.36dee",
+        "name": "",
+        "topic": "cursocefire/wemos/enrique/led",
+        "qos": "",
+        "retain": "",
+        "broker": "8afab589.d4bab8",
+        "x": 530,
+        "y": 200,
+        "wires": []
+    }
+]
